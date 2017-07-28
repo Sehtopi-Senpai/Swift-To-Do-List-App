@@ -9,11 +9,22 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    
+    @IBOutlet weak var input: UITextField!
+    
+    
+    @IBAction func addItem(_ sender: AnyObject) {
+        if(input.text != ""){
+            toDoList.append(input.text!)
+            input.text = ""
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundImage")!)
     }
+    @IBOutlet weak var addItem: UIButton!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
